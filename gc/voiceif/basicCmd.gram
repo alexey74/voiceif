@@ -1,0 +1,23 @@
+#JSGF V1.0;
+
+grammar basicCmd;
+
+public <basicCmd> = ( [ <start> ] <command> ) | ( <start> listen )  ;
+
+<command> = <verb> | ( <actionWindow> window ) | ( <actionMenu> menu ) |
+     ( <actionMusic> music ) | ( <actionScreen> screen ) | ( <actionDesktop> desktop ) |
+     ( <actionApp> <app> ) | ( ( silent | loud ) mode ) |
+     ( ( suspend | shutdown ) voice interface );
+
+<actionWindow> = close | minimize | maximize ;
+<actionMenu> = open | close;
+<actionMusic> = play | stop | pause;
+<actionScreen> = lock ;
+<actionApp> = open | close;
+<actionDesktop> = show | hide;
+<app> = mail | web | browser | terminal | news;
+
+<verb> = standby | respond | time | date | sleep | resume | status |
+    affirmative | negative  ;
+<start> = computer;
+
